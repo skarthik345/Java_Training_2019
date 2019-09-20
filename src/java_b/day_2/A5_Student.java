@@ -6,8 +6,8 @@ public class A5_Student {
 		this.studentType = 'F';
 	}
 
-	int studentID;
-	char studentType;
+	private int studentID;
+	private char studentType;
 	public int getStudentID() {
 		return studentID;
 	}
@@ -23,8 +23,6 @@ public class A5_Student {
 
 	public static void main(String[] args) {
 		A5_Student Student = new A5_Student();
-		Student.studentID=12345;
-		Student.studentType='F';
 		System.out.println(" Student details are:  ID= "+Student.getStudentID()+" Type= "+Student.getStudentType());
 	}
 

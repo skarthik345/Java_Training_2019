@@ -1,8 +1,8 @@
 package java_b.day_2;
 
 public class A4_Student {
-	int studentID;
-	char studentType;
+	private int studentID;
+	private char studentType;
 	public int getStudentID() {
 		return studentID;
 	}

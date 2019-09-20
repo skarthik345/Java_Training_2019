@@ -1,10 +1,10 @@
 package java_b.day_2;
 
 public class Assignment9 {
-	static int sid=545;
-	int studentID;
-	char studentType;
-	String studentName;
+	private static int sid=545;
+	private int studentID;
+	private char studentType;
+	private String studentName;
 	public Assignment9() {
 		int i= sid=sid+5;
 		this.studentID=i;
@@ -24,6 +24,5 @@ public class Assignment9 {
 		displayDetails(S1);
 		Assignment9 S2 = new Assignment9('H',"Dinil","Bose");
 		displayDetails(S2);
-		displayDetails(S1);
 	}
 }
