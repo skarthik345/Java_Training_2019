@@ -1,4 +1,0 @@
-a.  Exposed -> Student name, ID
-    Hidden -> DOB, Year, Courses registered, Marks
-b. Since the marks are calculated on a per subject basis for the semester we need not write different logic for different student/course type. So single method with marks obtained and total marks as parameters can be used to calculate the absolute grade.
-c. Two functions, one for common tuition fee and another for hosteller fee, which would return 0 directly if the student type variable is day scholar.
