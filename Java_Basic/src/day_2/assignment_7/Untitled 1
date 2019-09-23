@@ -1,1 +1,0 @@
-Step 3: Because the sid in the passTheValueMethod is a local variable and it's scope ends outside the method block.

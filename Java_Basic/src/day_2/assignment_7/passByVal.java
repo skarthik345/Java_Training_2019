@@ -8,12 +8,12 @@ public class passByVal {
 		passByVal val = new passByVal();
 		System.out.println(sid);
 		Student Student = new Student();
-		val.passTheValueMethod(Student, sid);
-		System.out.println("The sid final are " + sid);
+		val.passTheValueMethod(Student);
+		System.out.println("The sid final are " + Student.getStudentID());
 	}
-	public void passTheValueMethod(Student Stu, int sid)
+	public void passTheValueMethod(Student Stu)
 	{
-		sid = Stu.getStudentID();
-		System.out.println("The sid in passTheValueMethod are " + sid);
+		Stu.setStudentID(15);
+		System.out.println("The sid in passTheValueMethod are " + Stu.getStudentID());
 	}
 }
