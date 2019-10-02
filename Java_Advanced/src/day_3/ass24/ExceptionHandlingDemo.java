@@ -2,7 +2,6 @@ package day_3.ass24;
 
 public class ExceptionHandlingDemo {
 
-	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		String name = "john";
 		int total = 100,count=0;

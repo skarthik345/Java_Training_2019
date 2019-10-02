@@ -54,8 +54,7 @@ public class CustomerDB {
 		//creating the set of customer ids
 		Set<Integer> loanAvailedCustomers=new TreeSet<Integer>();
 		//getting the iterator for the list of customers
-		Iterator<Customer> customerIterator=
-				customerList.iterator();
+		Iterator<Customer> customerIterator=customerList.iterator();
 		//iterating the list of customers
 		while(customerIterator.hasNext()){
 			//getting the customer object

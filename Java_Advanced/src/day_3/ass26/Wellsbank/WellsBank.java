@@ -31,7 +31,6 @@ public class WellsBank {
 		try {
 			johnSA.withdraw(1600);
 		} catch (InsufficientBalanceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// To-do: display the balance available.
@@ -63,7 +62,6 @@ public class WellsBank {
  		try {
 			account.withdraw(100);
 		} catch (InsufficientBalanceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		}

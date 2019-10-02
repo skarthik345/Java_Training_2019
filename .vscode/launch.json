@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SwitchCase",
+            "request": "launch",
+            "mainClass": "day_2.assignment_3.SwitchCase",
+            "projectName": "Java_Basic"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Debug",
+            "request": "launch",
+            "mainClass": "ass_5.Debug",
+            "projectName": "Java_adv_2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserInput",
+            "request": "launch",
+            "mainClass": "day_3.assignment_6.UserInput",
+            "projectName": "Java_Basic"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WellsBank",
+            "request": "launch",
+            "mainClass": "ass_6.WellsBank",
+            "projectName": "Java_adv_2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - WellsBank",
+            "request": "launch",
+            "mainClass": "ass_4.WellsBank",
+            "projectName": "Java_adv_2"
+        }
+    ]
+}

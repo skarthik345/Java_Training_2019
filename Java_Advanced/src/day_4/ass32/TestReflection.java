@@ -6,7 +6,6 @@ public class TestReflection {
 			@SuppressWarnings("unused")
 			Class<?> classObj = Class.forName("Employee");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

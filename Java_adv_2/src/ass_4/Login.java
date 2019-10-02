@@ -16,8 +16,7 @@ public class Login {
 	 * A map containing the customer id and its corresponding
 	 * password
 	 */
-	private Map<Integer, String> loginMap=new
-			LinkedHashMap<Integer, String>();
+	private Map<Integer, String> loginMap=new LinkedHashMap<Integer, String>();
 	/**
 	 * <h3>Description :</h3> This method adds customer id and
 	 * password pair into the map for the customers availing the

@@ -1,4 +1,4 @@
-package ass_1;
+package ass_2;
 
 /**
  * This file contains the CustomerTester class
