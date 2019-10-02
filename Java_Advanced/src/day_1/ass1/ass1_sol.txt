@@ -1,0 +1,11 @@
+The given class diagram clearly explains the structure of the program.
+The classes would be
+	1.Customer
+	2.Bill
+	3.Plan
+	4.Mobile plan
+	5.Internet plan
+	6.Prepaid Mobile plan
+	7.Postpaid Mobile plan
+	8.Business Internet plan
+	9.Home Internet plan

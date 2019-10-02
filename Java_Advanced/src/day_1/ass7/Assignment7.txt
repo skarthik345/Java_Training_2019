@@ -1,0 +1,7 @@
+Answers to Questions:
+
+Q1. The java files are compiled using the java compiler to get .class files from .java files.
+Q2. Bytecode
+	Yes
+Q3. Mac JVM, Windows JVM and Unix JVM
+	No

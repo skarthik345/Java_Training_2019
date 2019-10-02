@@ -1,0 +1,14 @@
+a. The 2 cases of hierarchy can be, 
+    1. Lecturer -> Full time, Visiting menber.
+    2. Exam -> Project, Assignmnet, Internal end, Semester end.
+b. All four have these common characteristics, theyhave common student id variable assigned to them and a student has to be either
+	 hostelite/day scholar and in the same way graduate/post-graduate student.
+c. Different layers possible are
+    Student ->hostelite/day scholar, graduate/post-graduate
+    Staff -> Admin staff, Lecturers, HOD
+        Lecturer inheriting Staff -> Full time, Visiting menber.
+        HOD extending Lecturer
+    Courses -> Core,elective, project
+    Exams -> Project, Assignmnet, Internal end, Semester end.
+d. The admin staff needs to know the list of people, courses registered for the Semester, name of the student, Lecturer assigned to the subject,
+	 List of exams, Marks scored in the exam.

@@ -1,0 +1,33 @@
+Classes:
+	Customer
+	Account -> Savings, Overdraft
+Relation as above
+Member variables and methods:
+	Customer
+		Variables:
+		-customerId : int
+		- customerName : String
+		- customerAddress : String
+		- pincode : int
+		Methods:
+		+ Customer()
+		+ Customer(int customerId, String customerName,String customerAddress, int pincode)
+		+ setCustomerId(int customerId) : void
+		+ getCustomerId() : int
+		+ setCustomerName(String customerName) : void
+		+ getCustomerName() : String
+		+ setCustomerAddress(String customerAddress) : void
+		+ getCustomerAddress() : String
+		+ setPincode(int pincode) : void
+		+ getPincode() : int
+	Account
+		Variables:
+		- accountNo : int
+		- customer : Customer
+		# balance : double
+		Methods:
+		+ Account()
+		+ Account(int accountNo, Customer customer,double balance)
+		+ getCustomer() : Customer
+		+ balanceEnquiry() : double
+		+ deposit(double amount) : void
