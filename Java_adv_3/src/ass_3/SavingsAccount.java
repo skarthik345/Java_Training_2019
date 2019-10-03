@@ -1,5 +1,7 @@
 package ass_3;
 
+import java.io.Serializable;
+
 /**
  * This file contains a class of Savings Account
  */
@@ -9,10 +11,14 @@ package ass_3;
  * and this represents a Savings Account in ImcsBank
  *
  */
-public class SavingsAccount extends Account
+public class SavingsAccount extends Account implements Serializable
 { /*
  * The interest rate for the Savings Account
  */
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private float rateOfInterest;
 	/*
 	 * The minimum balance that has to be maintained in the account
@@ -61,5 +67,9 @@ public class SavingsAccount extends Account
 	 */
 	public void setMinimumBalance(double minimumBalance) {
 		this.minimumBalance = minimumBalance;
+	}
+	@Override
+	public String toString() {
+		return "SavingsAccount [rateOfInterest=" + rateOfInterest + ", minimumBalance=" + minimumBalance + "]";
 	}
 }

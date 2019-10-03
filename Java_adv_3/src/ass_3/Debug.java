@@ -4,9 +4,10 @@ package ass_3;
  * This file contains the class that contains the main
  * method. The code may contain errors which have to be debugged.
  */
-import java.io.BufferedInputStream;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -26,13 +27,27 @@ public class Debug {
 		//creating a savingsAccount object
 		SavingsAccount sb1=new SavingsAccount(9001,customer,2000,5,1000);
 		//Serializing the above object
-		FileOutputStream fileOutputStream = new FileOutputStream("data.ser");
-		ObjectOutputStream objStream = new ObjectOutputStream(fileOutputStream);
-		objStream.writeObject(sb1);
-		objStream.close();
+		FileOutputStream fileOutputStream;
+		try {
+			fileOutputStream = new FileOutputStream("data.ser");
+			ObjectOutputStream objStream = new ObjectOutputStream(fileOutputStream);
+			objStream.writeObject(sb1);
+			objStream.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//deserializing the Savings Account object FileInputStream
-		FileInputStream fileInput=new FileInputStream("data.ser");
-		ObjectInputStream objectInputStream=new ObjectInputStream(fileInput);
-		SavingsAccount deserializedSb=(SavingsAccount)objectInputStream.read();
+		FileInputStream fileInput;
+		try {
+			fileInput = new FileInputStream("data.ser");
+			ObjectInputStream objectInputStream=new ObjectInputStream(fileInput);
+			SavingsAccount deserializedSb=(SavingsAccount)objectInputStream.readObject();
+			System.out.println("Account details: "+deserializedSb.toString());
+			objectInputStream.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

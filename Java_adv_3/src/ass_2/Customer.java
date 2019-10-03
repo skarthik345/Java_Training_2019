@@ -1,5 +1,7 @@
 package ass_2;
 
+import java.io.Serializable;
+
 /**
  * This file contains the Customer Bean class
  */
@@ -9,7 +11,11 @@ package ass_2;
  * customer of WellsBank
  * @author Karthik
  */
-public class Customer{
+public class Customer implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/*
 	 * The customer Id of the customer
 	 */
@@ -18,6 +24,19 @@ public class Customer{
 	 * The name of the customer
 	 */
 	private String customerName;
+	@Override
+    public boolean equals(Object obj) {
+		if(this == obj)
+			return true;
+        if(obj == null || obj.getClass()!= this.getClass())
+        	return false;
+        Customer cust = (Customer) obj;	
+		return ((cust.customerId==this.customerId) && cust.customerName.equals(this.customerName));
+	}
+	@Override
+    public int hashCode() {
+		return this.customerId;
+	}
 	/*
 	 * The status of the customer if has already availed the loan
 	 */

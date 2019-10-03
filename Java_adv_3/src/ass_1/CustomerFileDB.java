@@ -21,6 +21,7 @@ public class CustomerFileDB {
 	 * Destination file name
 	 */
 	String file="customer.dat";
+	String accountFile="Account.dat";
 	/**
 	 * <h3>Description :</h3> This method saves the instance variables of the
 	 * Customer object

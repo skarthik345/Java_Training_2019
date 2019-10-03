@@ -1,5 +1,7 @@
 package ass_2;
 
+import java.io.Serializable;
+
 /**
 * This file contains an Account bean class
 */
@@ -9,8 +11,12 @@ package ass_2;
  *         <h3>Description :</h3> This Account bean class represents an account
  *         in WellsBank
  */
-public class Account {
-    /*
+public class Account implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/*
      * The account No of the account
      */
     private int accountNo;
@@ -21,7 +27,7 @@ public class Account {
     /*
      * The bank balance of the account
      */
-    protected volatile double balance;
+    protected double balance;
 
     /**
      * <h3>Description :</h3> The parameterized constructor if the Account class
@@ -95,4 +101,10 @@ public class Account {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+	@Override
+	public String toString() {
+		return "Account [accountNo=" + accountNo + ", customer=" + customer + ", balance=" + balance + "]";
+	}
+    
 }

@@ -6,9 +6,13 @@ package ass_2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * <h3>Description :</h3> This class contains methods for saving
@@ -21,6 +25,7 @@ public class CustomerFileDB {
 	 * Destination file name
 	 */
 	String file="customer.dat";
+	String accFile="account.dat";
 	/**
 	 * <h3>Description :</h3> This method saves the instance variables of the
 	 * Customer object
@@ -125,5 +130,40 @@ public class CustomerFileDB {
 		}
 		//returning the customer bean
 		return customer;
+	}
+	public int saveAccount(Account account) {
+		//creating status for return
+		int status=-1;
+		if(getAccount(account.getAccountNo())!=null) {
+			System.out.println("Account already exists!!");
+			return -2;
+		}
+		//creating reference for readers and writers
+		try {
+			ObjectOutputStream objStream = new ObjectOutputStream(new FileOutputStream(accFile));
+			//writing the account object to the file
+			objStream.writeObject(account);
+			objStream.close();
+			status=0;
+		} catch (IOException ioException) {
+			status=-2;
+			ioException.printStackTrace();
+		}
+		//returning the status
+		return status;
+	}
+	public Account getAccount(int parseInt) {
+		Account deserializedAccount = null;
+		try {
+			//creating reference for readers and writers
+			ObjectInputStream objectInputStream=new ObjectInputStream(new FileInputStream(accFile));
+			deserializedAccount=(Account)objectInputStream.readObject();
+			System.out.println("Account details: "+deserializedAccount.toString());
+			objectInputStream.close();
+		} catch (IOException | ClassNotFoundException exception)
+		{ exception.printStackTrace();
+		}
+		//returning the Account bean
+		return deserializedAccount;
 	}
 }
