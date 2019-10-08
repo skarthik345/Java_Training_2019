@@ -15,7 +15,10 @@ public class Customer implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -4080903246059254193L;
+	/**
+	 * 
+	 */
 	/*
 	 * The customer Id of the customer
 	 */
@@ -24,6 +27,12 @@ public class Customer implements Serializable {
 	 * The name of the customer
 	 */
 	private String customerName;
+	
+	/*
+	 * The status of the customer if has already availed the loan
+	 */
+	private boolean loanAvailed;
+	
 	@Override
     public boolean equals(Object obj) {
 		if(this == obj)
@@ -37,10 +46,7 @@ public class Customer implements Serializable {
     public int hashCode() {
 		return this.customerId;
 	}
-	/*
-	 * The status of the customer if has already availed the loan
-	 */
-	private boolean loanAvailed;
+	
 	/**
 	 * <h3>Description :</h3>This overloaded constructor is used to
 	 * initialize the Customer object
@@ -113,4 +119,10 @@ public class Customer implements Serializable {
 	public void setLoanAvailed(boolean loanAvailed) {
 		this.loanAvailed = loanAvailed;
 	}
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", loanAvailed=" + loanAvailed
+				+ "]";
+	}
+	
 }

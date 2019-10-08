@@ -25,7 +25,7 @@ public class Debug {
 		//creating a customer object
 		Customer customer=new Customer(1001,"Tan");
 		//creating a savingsAccount object
-		SavingsAccount sb1=new SavingsAccount(9001,customer,2000,5,1000);
+		SavingsAccount sb1=new SavingsAccount(90013,customer,2000,55,1000);
 		//Serializing the above object
 		FileOutputStream fileOutputStream;
 		try {
@@ -34,7 +34,6 @@ public class Debug {
 			objStream.writeObject(sb1);
 			objStream.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//deserializing the Savings Account object FileInputStream
@@ -46,7 +45,6 @@ public class Debug {
 			System.out.println("Account details: "+deserializedSb.toString());
 			objectInputStream.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

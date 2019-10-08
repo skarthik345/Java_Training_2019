@@ -6,6 +6,7 @@ package ass_2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -25,7 +26,7 @@ public class CustomerFileDB {
 	 * Destination file name
 	 */
 	String file="customer.dat";
-	String accFile="account.dat";
+	String accFile="account.ser";
 	/**
 	 * <h3>Description :</h3> This method saves the instance variables of the
 	 * Customer object
@@ -140,11 +141,11 @@ public class CustomerFileDB {
 		}
 		//creating reference for readers and writers
 		try {
-			ObjectOutputStream objStream = new ObjectOutputStream(new FileOutputStream(accFile));
+			ObjectOutputStream objStream = new ObjectOutputStream(new FileOutputStream(accFile,true));
 			//writing the account object to the file
 			objStream.writeObject(account);
-			objStream.close();
 			status=0;
+			objStream.close();
 		} catch (IOException ioException) {
 			status=-2;
 			ioException.printStackTrace();
@@ -152,18 +153,28 @@ public class CustomerFileDB {
 		//returning the status
 		return status;
 	}
-	public Account getAccount(int parseInt) {
+	public Account getAccount(int accNumber) {
 		Account deserializedAccount = null;
 		try {
 			//creating reference for readers and writers
 			ObjectInputStream objectInputStream=new ObjectInputStream(new FileInputStream(accFile));
 			deserializedAccount=(Account)objectInputStream.readObject();
-			System.out.println("Account details: "+deserializedAccount.toString());
+			while(deserializedAccount!=null){
+				//checking if the input accountNo and the fetched one are the same
+				if(deserializedAccount.getAccountNo()==accNumber){
+					objectInputStream.close();
+					return deserializedAccount;
+				}
+				//reading the data from the file
+				deserializedAccount=(Account)objectInputStream.readObject();
+			}
 			objectInputStream.close();
-		} catch (IOException | ClassNotFoundException exception)
-		{ exception.printStackTrace();
+		}	catch (EOFException exception) {}
+			catch (IOException | ClassNotFoundException exception)
+		{ 
+			exception.printStackTrace();
 		}
 		//returning the Account bean
-		return deserializedAccount;
+		return null;
 	}
 }

@@ -104,7 +104,7 @@ public class Account implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Account [accountNo=" + accountNo + ", customer=" + customer + ", balance=" + balance + "]";
+		return "Account [accountNo=" + accountNo + ", customer=" + customer.toString() + ", balance=" + balance + "]";
 	}
     
 }
