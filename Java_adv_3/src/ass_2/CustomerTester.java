@@ -9,6 +9,8 @@ package ass_2;
  * @author Karthik
  */
 public class CustomerTester {
+	CustomerFileDB customerFileDB;
+	
 	/**
 	 * <h3>Description :</h3> This method accepts the customer information from the
 	 * console and saves the data in the file using the methods of CustomerFileDB class
@@ -26,7 +28,7 @@ public class CustomerTester {
 		Customer customer = new Customer();
 		customer.setCustomerId(Integer.parseInt(custId));
 		customer.setCustomerName(custName);
-		Customer customer2=new CustomerFileDB().getCustomer(Integer.parseInt(custId));
+		Customer customer2= customerFileDB.getCustomer(Integer.parseInt(custId));
 		if(!(customer.equals(customer2))) {
 			System.out.println("The entered customer details are not present in the database!!");
 		}
@@ -41,7 +43,7 @@ public class CustomerTester {
 			//populating the Account bean
 			Account account = new Account(accNo, customer, balance);
 			//saving the account data in the file through DB class
-			int status=new CustomerFileDB().saveAccount(account);
+			int status=customerFileDB.saveAccount(account);
 			if(status==0){
 				//displaying the success message
 				System.out.println("Your details are saved \n");
@@ -65,7 +67,7 @@ public class CustomerTester {
 		customer.setCustomerId(Integer.parseInt(custId));
 		customer.setCustomerName(custName);
 		//saving the data in the file through DB class
-		int status=new CustomerFileDB().saveCustomer(customer);
+		int status=customerFileDB.saveCustomer(customer);
 		if(status==0){
 			//displaying the success message
 			System.out.println("Your details are saved");
@@ -84,7 +86,7 @@ public class CustomerTester {
 		//Accepting the customer id
 		System.out.print("\nPlease enter customer Id :");
 		String custId=ReadData.acceptString();
-		Customer customer=new CustomerFileDB().getCustomer(Integer.parseInt(custId));
+		Customer customer=customerFileDB.getCustomer(Integer.parseInt(custId));
 		if(customer!=null){
 			//displaying the details
 			System.out.println("\n Customer Id is : "+customer.getCustomerId());
@@ -100,7 +102,7 @@ public class CustomerTester {
 		//Accepting the Acc No
 		System.out.print("\nPlease enter Acc No :");
 		String accNo=ReadData.acceptString();
-		Account account = new CustomerFileDB().getAccount(Integer.parseInt(accNo));
+		Account account = customerFileDB.getAccount(Integer.parseInt(accNo));
 		if(account!=null){
 			//displaying the details
 			System.out.println(account.toString());
@@ -135,5 +137,9 @@ public class CustomerTester {
 			default :System.out.println("\nEnter a valid option!!!!!!!!!!!!!!!!!");
 			}
 		}
+	}
+
+	public CustomerTester() {
+		this.customerFileDB = new CustomerFileDB();
 	}
 }
