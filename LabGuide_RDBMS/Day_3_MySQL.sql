@@ -60,3 +60,61 @@ Insert into Feedback values (5, 'GPF','Batch2',4.28);
 Insert into Feedback values (1, 'GPF','Batch3',4.28);
 Insert into Feedback values (3, 'JJA','Batch3',4.32);
 
+select distinct t.trainername, c.coursename
+    from trainer t, feedback f, course_details c
+    where t.trainerid=f.trainerid 
+        and f.courseid=c.courseid
+
+select t.trainername, count(CourseName)
+    from trainer t, feedback f, course_details c
+    where t.trainerid=f.trainerid 
+        and f.courseid=c.courseid
+    group by t.TrainerName
+    having count(coursename)>1
+
+select TrainerID, trainername, count(CourseName)
+    from (select distinct t.trainerid, t.trainername, c.coursename
+            from trainer t, feedback f, course_details c
+            where t.trainerid=f.trainerid 
+                and f.courseid=c.courseid
+            group by t.trainerid,t.TrainerName, c.coursename) as final
+    group by trainerid,trainername 
+
+select TrainerID, trainername, coursename, count(CourseName)
+    from (select t.trainerid, t.trainername, c.coursename, f.BatchName
+            from trainer t, feedback f, course_details c
+            where t.trainerid=f.trainerid 
+                and f.courseid=c.courseid
+            group by t.trainerid,t.TrainerName, c.coursename, f.batchname) as final
+    group by trainerid,trainername,coursename
+
+select distinct bs.batchname, DATEDIFF(maxi.max,mini.min) as Duration_of_batch
+    from Batch_Schedule as bs, (select batchname,min(start_date) as min from Batch_Schedule
+        group by batchname) as mini,
+        (select batchname,max(end_date) as max from Batch_Schedule
+        group by batchname) as maxi
+    where bs.batchname=mini.batchname
+        and bs.batchname=maxi.batchname                
+
+select t.trainername, c.coursename, bs.batchname
+    from trainer t, feedback f, course_details c, Batch_Schedule bs
+    where t.trainerid=f.trainerid 
+        and f.courseid=c.courseid
+        and c.courseid=bs.courseid
+        and f.batchname=bs.batchname
+        and bs.start_date<'2008-02-20'
+
+select t.trainerid
+    from trainer t, feedback f, course_details c, Batch_Schedule bs
+    where t.trainerid=f.trainerid 
+        and f.courseid=c.courseid
+        and c.courseid=bs.courseid
+        and f.batchname=bs.batchname
+        
+select TrainerID, trainername, coursename, count(CourseName)
+    from (select t.trainerid, t.trainername, c.coursename, f.BatchName
+            from trainer t, feedback f, course_details c
+            where t.trainerid=f.trainerid 
+                and f.courseid=c.courseid
+            group by t.trainerid,t.TrainerName, c.coursename, f.batchname) as final
+    group by trainerid,trainername,coursename
