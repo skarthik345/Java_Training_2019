@@ -1,0 +1,18 @@
+<html>
+<head><title>Main Window</title>
+<script language="JavaScript">
+function openNew(){
+	newwin = window.open("newwin.html","newone");
+	//document.write(newwin);
+}
+function closeWin(){
+	newwin.close();
+}
+</script>
+</head>
+<body>
+	<font color ="red" size="5">Main Window</font>
+	<input type ="button" value = "Open" onClick="openNew()">
+	<input type ="button" value = "Close" onClick= "closeWin()">
+</body>
+</html>

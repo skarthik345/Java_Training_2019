@@ -1,0 +1,53 @@
+<html>
+<head>
+<script language="JavaScript">
+	function add(){
+		if(!(isFinite(document.form1.num1.value) && isFinite(document.form1.num2.value))){
+			alert("Please enter a number!");
+			return false;
+		}
+		else{
+		document.form1.result.value=parseInt(document.form1.num1.value)+parseInt(document.form1.num2.value)
+	}
+	}
+	function sub(){
+		if(!(isFinite(document.form1.num1.value) && isFinite(document.form1.num2.value))){
+			alert("Please enter a number!");
+			return false;
+		}
+		else{
+		document.form1.result.value=parseInt(document.form1.num1.value)-parseInt(document.form1.num2.value)
+	}
+	}
+	function mul(){
+		if(!(isFinite(document.form1.num1.value) && isFinite(document.form1.num2.value))){
+			alert("Please enter a number!");
+			return false;
+		}
+		else{
+		document.form1.result.value=parseInt(document.form1.num1.value)*parseInt(document.form1.num2.value)
+	}
+	}
+	function div(){
+		if(!(isFinite(document.form1.num1.value) && isFinite(document.form1.num2.value))){
+			alert("Please enter a number!");
+			return false;
+		}
+		else{
+		document.form1.result.value=parseInt(document.form1.num1.value)/parseInt(document.form1.num2.value)
+	}
+	}
+</script>
+</head>
+<body>
+<form name="form1">
+	Num1<input type="text" name="num1" ><br><br>
+	Num2<input type="text" name="num2"><br><br>
+	Result<input type="text" name = "result"><br><br>
+	<input type="button" value="Add" onClick="add()"><br><br>
+	<input type="button" value="Subtract" onClick="sub()"><br><br>
+	<input type="button" value="Multiply" onClick="mul()"><br><br>
+	<input type="button" value="Divide" onClick="div()"><br><br>
+</form>
+</body>
+</html>

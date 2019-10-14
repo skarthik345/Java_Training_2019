@@ -1,0 +1,19 @@
+<html>
+<head>
+<script language="JavaScript">
+	function date(){
+		dateOb = new Date();
+		date = dateOb.getDate();
+		day = dateOb.getDay();
+		month = parseInt(dateOb.getMonth())+1;
+		year = dateOb.getFullYear();
+		document.writeln("Day is "+day);
+		document.writeln("Date is "+date);
+		document.writeln("Month is "+month);
+		document.writeln("Year is "+year);
+		document.writeln("Today's date is "+date+"-"+month+"-"+year);
+	}
+date();
+</script>
+</head>
+</html>

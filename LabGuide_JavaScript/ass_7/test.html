@@ -1,0 +1,22 @@
+<html>
+<head>
+<script language="JavaScript">
+var counter =0;
+id = window.setTimeout("Update();",2000);
+function Update(){
+	counter++;
+	document.form1.input1.value=counter;
+	window.status="The counter is now at "+counter;
+	id=window.setTimeout("Update();",2000);
+}
+</script>
+</head>
+<body>
+</h1>Using the  settimeout function</h1>
+<form name = "form1">
+<input type="text" name="input1">
+<input type="button" value="Reset the counter" onClick="counter=0;Update();">
+<input type="button" value="Stop the counter" onClick="window.clearTimeout(id);">
+</form>
+</body>
+</html>
