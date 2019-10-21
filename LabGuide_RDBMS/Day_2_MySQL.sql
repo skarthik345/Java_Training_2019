@@ -46,7 +46,7 @@ select * from emp where hiredate < "1981-09-30"
 
 select * from emp where mgr is not null
 
-select ename,empno from emp where empno in (7369,7521,7839, 7934, 7788)
+select ename,empno from emp where empno in (7369, 7521, 7839, 7934, 7788)
 
 select * from emp where deptno not in (30,40,10)
 
@@ -66,7 +66,7 @@ select distinct job from emp
 
 select sum(sal) from emp
 
-select max(sal) as max_sal,min(sal) as min_sal,avg(sal) as avg_sal from emp
+select max(sal) as max_sal, min(sal) as min_sal, avg(sal) as avg_sal from emp
 
 select max(sal) from emp where job like "Salesman"
 
@@ -79,7 +79,7 @@ avg(sal) > 1000 order by job;
 
 select count(empno) as Count,avg(sal),deptno from emp where deptno like 20 group by deptno 
 
-select ename,sal,(sal/10) as PF from emp
+select ename, sal, (sal/10) as PF from emp
 
 select * from emp where (DATEDIFF(current_date,hiredate)/365)>37;
 
